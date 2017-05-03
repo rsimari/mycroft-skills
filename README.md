@@ -1,4 +1,4 @@
-# REDDIT-SKILL skill
+# NPR-LIVE-SKILL skill
 
 This skill does ...
 

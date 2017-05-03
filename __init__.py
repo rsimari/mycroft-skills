@@ -38,11 +38,11 @@ LOGGER = getLogger(__name__)
 # The logic of each skill is contained within its own class, which inherits
 # base methods from the MycroftSkill class with the syntax you can see below:
 # "class ____Skill(MycroftSkill)"
-class HelloWorldSkill(MycroftSkill):
+class RedditLiveSkill(MycroftSkill):
 
     # The constructor of the skill, which calls MycroftSkill's constructor
     def __init__(self):
-        super(HelloWorldSkill, self).__init__(name="HelloWorldSkill")
+        super(RedditLiveSkill, self).__init__(name="RedditLiveSkill")
 
     # This method loads the files needed for the skill's functioning, and
     # creates and registers each intent that the skill uses
@@ -58,8 +58,8 @@ class HelloWorldSkill(MycroftSkill):
         self.register_intent(how_are_you_intent,
                              self.handle_how_are_you_intent)
 
-        hello_world_intent = IntentBuilder("HelloWorldIntent").\
-            require("HelloWorldKeyword").build()
+        hello_world_intent = IntentBuilder("RedditLiveIntent").\
+            require("RedditLiveKeyword").build()
         self.register_intent(hello_world_intent,
                              self.handle_hello_world_intent)
 
@@ -88,4 +88,4 @@ class HelloWorldSkill(MycroftSkill):
 # The "create_skill()" method is used to create an instance of the skill.
 # Note that it's outside the class itself.
 def create_skill():
-    return HelloWorldSkill()
+    return RedditLiveSkill()
